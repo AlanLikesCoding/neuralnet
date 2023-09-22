@@ -49,4 +49,6 @@ class network:
                 if not type(self.nodes[i][p]) == node:
                     for n in range(len(self.nodes[i][p])):
                         result[i].append(math.tanh(self.nodes[i][p][n].propagate(prev_neurons)))
+                else:
+                    result[i].append(math.tanh(self.nodes[i][p].propagate(prev_neurons)))
         return result[-1]
